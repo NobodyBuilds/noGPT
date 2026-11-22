@@ -11,4 +11,8 @@ inline int encode(std::vector<int> &tokens,std::map<std::pair<int, int>, int>& m
 
 inline void decode(std::vector<int> &tokens,std::map<std::pair<int, int>, int>& mergeRules,std::vector<std::pair<int, int>>& mergeidx);
 
+inline bool loadtokenizer(std::map<std::pair<int, int>, int>& mergeRules,std::vector<std::pair<int, int>>& mergeidx);
+
+
+
 inline void get_tokens(std::vector<int>& tokens);

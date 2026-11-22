@@ -8,6 +8,27 @@
 
 using namespace std;
 
+bool loadtokenizer(std::map<std::pair<int, int>, int> &mergeRules, std::vector<std::pair<int, int>> &mergeidx)
+{
+    std::ifstream file("tokenizer.txt");
+
+    if (!file.is_open())
+    {
+        std::cout << "Failed to load tokenizer\n";
+        return false;
+    }
+    int a, b, id;
+    char plus, equal;
+    mergeidx.clear();
+    mergeRules.clear();
+    while (file >> a >> plus >> b >> equal >> id)
+    {
+
+        mergeidx.push_back({a, b});
+        mergeRules[{a, b}] = id;
+    }
+    return true;
+}
 
 
 int bpe(vector<int> &tokens,
